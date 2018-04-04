@@ -97,33 +97,3 @@ download=function(input=input.drive,output=output.folder){
 
 
 
-####OLD
-d=function(input="C:\\Users\\User\\Desktop\\sd",output="C:\\Users\\User\\Desktop\\th_download"){
-  first.time=toupper(readline("Is this your first time using this function today? Enter 'y' or 'n'"))
-  if(first.time%in%c("YES","Y")){
-    drive=toupper(readline("What drive are SD cards opening under on this computer? Choose 'D','E', or 'F'___")) 
-  }  
-  start.length=length(list.files(output))
-  start.contents=list.files(output)
-  input.file.full=list.files(input,pattern=".csv",full.names=T)
-  input.file.short=list.files(input,pattern=".csv")
-  if(length(input.file.short)==0)stop("There are no .CSV files to be copied. Check SD card contents and proceed manually")
-  if(length(input.file.short)>1)stop("There is more than 1 .CSV. Check SD card contents and proceed manually")
-  file.copy(input.file.full,paste0(output,"\\",input.file.short),overwrite=F)
-  end.length=length(list.files(output))-start.length
-  end.contents=list.files(output)
-  if(end.length==1)print("1 file(s) copied")
-  if(end.length==1)print(end.contents[!(end.contents%in%start.contents)])
-  if(end.length==0){
-    warning("0 files copied")
-  }else{
-    new.file=list.files(output,full.names=T)[!(end.contents%in%start.contents)]
-    tail.copied=tail(read.csv(new.file,1))
-    print(paste0("Last record date:   ",tail.copied$date))
-    print(paste0("Last record mm :   ",tail.copied$mm))
-  }
-}
-download=d
-
-
-
