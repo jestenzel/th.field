@@ -26,6 +26,9 @@ set.folders=function(){
   input.drive<<-paste0(toupper(readline("What drive are SD cards opening under on this computer? Choose 'D','E', or 'F'___")),":\\") 
   readline("Hit ENTER and then select the desktop output folder")
   output.folder<<-choose.dir()
+  print(paste0("Input Drive=  ",input.drive))
+  print(paste0("Output folder=  ",output.folder))
+ print("If these locations are incorrect, run 'set.folders()' again!")
 }
 
 
@@ -56,6 +59,9 @@ download=function(input=input.drive,output=output.folder){
     input.drive<<-paste0(toupper(readline("What drive are SD cards opening under on this computer? Choose 'D','E', or 'F'___")),":\\") 
     readline("Hit ENTER and then select the desktop output folder")
     output.folder<<-choose.dir()
+    print(paste0("Input Drive=  ",input.drive))
+    print(paste0("Output folder=  ",output.folder))
+    print("If these locations are incorrect, run 'set.folders()' again!")
   }
   start.length=length(list.files(output))
   start.contents=list.files(output)
