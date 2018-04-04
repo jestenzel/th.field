@@ -1,0 +1,10 @@
+Package: th.field
+Title: Treehugger field functions
+Version: 1.0
+Authors@R: person("Jeffrey", "Stenzel", email = "jstenzel@uidaho.edu", role = c("aut", "cre"))
+Description: This package currently contains three functions. At the beginning of any field session, first set the input and ouput folders using "set.folders()". Function "set" allows sets logger name (a five digit number), the logging interval, and the time. In most cases, the user does not need to change the interval from '30'. Function "download" initiates a download of a SD card's .CSV file and uploads to the tablet desktop folder that was specified initially with the "set.folders()" function. 
+Depends: R (>= 3.3.0)
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
