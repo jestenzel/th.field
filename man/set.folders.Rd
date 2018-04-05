@@ -7,5 +7,5 @@
 set.folders()
 }
 \description{
-This function sets paths for the set() and download() functions and should be used at the beginning of a session
+This function sets paths for the set() and download() functions and should be used at the beginning of a session. The assigned input drive and output folder are printed in the R console. Please create an download output folder specific to the download day and site. Note: No parameters are necessary.
 }
