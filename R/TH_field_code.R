@@ -48,6 +48,7 @@ set.folders=function(){
 #' @examples set("16999", 30, "new")
 #'
 #'@export
+
 set=function(name="N",int=30,logger="new"){
   #if(dir.exists("D:/")==TRUE&dir.exists("E:/")==FALSE)drive="D:\\"
   #if(dir.exists("D:/")==FALSE&dir.exists("E:/")==TRUE)drive="E:\\"
@@ -57,8 +58,8 @@ set=function(name="N",int=30,logger="new"){
     name=as.numeric(readline("Enter the logger name (xxxxx; e.g. 16999)___")) 
   }
   write(int,paste0(drive,"INTSET.txt"))
-  if(logger=="new")write(format(Sys.time()-3590,"%d/%m/%Y,%H:%M:%S,"),paste0(drive,"TIMESET.txt"))
-  if(logger=="old")write(format(Sys.time()-3590,"%m/%d/%Y,%H:%M:%S,"),paste0(drive,"CLKSET.txt"))
+  if(logger=="new")write(format(Sys.time()-3590,"%m/%d/%Y,%H:%M:%S,"),paste0(drive,"TIMESET.txt"))
+  if(logger=="old")write(format(Sys.time()-3590,"%d/%m/%Y,%H:%M:%S,"),paste0(drive,"CLKSET.txt"))
   if(name!="N")write(paste0(" ",name),paste0(drive,"SERSET.txt"))
 }
 
